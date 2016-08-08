@@ -1,0 +1,22 @@
+{
+    "cebilletterieApp": {
+        "statutDemande" : {
+            "home": {
+                "title": "StatutDemandes",
+                "createLabel": "Créer un nouveau Statut Demande",
+                "createOrEditLabel": "Créer ou éditer un Statut Demande",
+                "search": "Recherche pour Statut Demande"
+            },
+            "created": "Un nouveau Statut Demande a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Statut Demande avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Statut Demande avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Statut Demande {{ id }} ?"
+            },
+            "detail": {
+                "title": "Statut Demande"
+            },
+            "date": "Date"
+        }
+    }
+}

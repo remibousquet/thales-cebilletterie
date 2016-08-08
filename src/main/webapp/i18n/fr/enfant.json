@@ -1,0 +1,25 @@
+{
+    "cebilletterieApp": {
+        "enfant" : {
+            "home": {
+                "title": "Enfants",
+                "createLabel": "Créer un nouveau Enfant",
+                "createOrEditLabel": "Créer ou éditer un Enfant",
+                "search": "Recherche pour Enfant"
+            },
+            "created": "Un nouveau Enfant a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Enfant avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Enfant avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Enfant {{ id }} ?"
+            },
+            "detail": {
+                "title": "Enfant"
+            },
+            "nom": "Nom",
+            "prenom": "Prenom",
+            "dateNaissance": "Date Naissance",
+            "salarie": "Salarie"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+
+<div>
+    <h2><span translate="cebilletterieApp.subvention.detail.title">Subvention</span> {{vm.subvention.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="cebilletterieApp.subvention.subventionAnnee">Subvention Annee</span></dt>
+        <dd>
+            <span>{{vm.subvention.subventionAnnee}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.subvention.subventionMontant">Subvention Montant</span></dt>
+        <dd>
+            <span>{{vm.subvention.subventionMontant}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.subvention.salarie">Salarie</span></dt>
+        <dd>
+            {{vm.subvention.salarie.id}}
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="subvention-detail.edit({id:vm.subvention.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

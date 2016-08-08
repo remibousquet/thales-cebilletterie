@@ -1,0 +1,71 @@
+
+<div>
+    <h2><span translate="cebilletterieApp.billet.detail.title">Billet</span> {{vm.billet.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="cebilletterieApp.billet.titre">Titre</span></dt>
+        <dd>
+            <span>{{vm.billet.titre}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.typeDate">Type Date</span></dt>
+        <dd>
+            <span>{{vm.billet.typeDate}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.dateDebut">Date Debut</span></dt>
+        <dd>
+            <span>{{vm.billet.dateDebut | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.dateFin">Date Fin</span></dt>
+        <dd>
+            <span>{{vm.billet.dateFin | date:'medium'}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.horaire">Horaire</span></dt>
+        <dd>
+            <span>{{vm.billet.horaire}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.lieu">Lieu</span></dt>
+        <dd>
+            <span>{{vm.billet.lieu}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.zoneSalle">Zone Salle</span></dt>
+        <dd>
+            <span>{{vm.billet.zoneSalle}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.typePublic">Type Public</span></dt>
+        <dd>
+            <span>{{vm.billet.typePublic}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.prixUnitaire">Prix Unitaire</span></dt>
+        <dd>
+            <span>{{vm.billet.prixUnitaire}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.quantiteStock">Quantite Stock</span></dt>
+        <dd>
+            <span>{{vm.billet.quantiteStock}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.commentaire">Commentaire</span></dt>
+        <dd>
+            <span>{{vm.billet.commentaire}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.type">Type</span></dt>
+        <dd>
+            <a ui-sref="type-billet-detail({id:vm.billet.type.id})">{{vm.billet.type.id}}</a>
+        </dd>
+        <dt><span translate="cebilletterieApp.billet.titreType">Titre Type</span></dt>
+        <dd>
+            <a ui-sref="titre-type-billet-detail({id:vm.billet.titreType.id})">{{vm.billet.titreType.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="billet-detail.edit({id:vm.billet.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

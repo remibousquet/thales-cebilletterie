@@ -1,0 +1,84 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myDemandeLabel" translate="cebilletterieApp.demande.home.createOrEditLabel">Create or edit a Demande</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.demande.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.demande.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.demande.numeroExterne" for="field_numeroExterne">Numero Externe</label>
+            <input type="text" class="form-control" name="numeroExterne" id="field_numeroExterne"
+                    ng-model="vm.demande.numeroExterne"
+                    ng-maxlength="100" />
+            <div ng-show="editForm.numeroExterne.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.numeroExterne.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.demande.quantite" for="field_quantite">Quantite</label>
+            <input type="number" class="form-control" name="quantite" id="field_quantite"
+                    ng-model="vm.demande.quantite"
+                    required />
+            <div ng-show="editForm.quantite.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.quantite.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.quantite.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.demande.commentaire" for="field_commentaire">Commentaire</label>
+            <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                    ng-model="vm.demande.commentaire"
+                    ng-maxlength="256" />
+            <div ng-show="editForm.commentaire.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.commentaire.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="256">
+                    This field cannot be longer than 256 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="cebilletterieApp.demande.statut" for="field_statut">Statut</label>
+            <select class="form-control" id="field_statut" name="statut" ng-model="vm.demande.statut" ng-options="statutDemande as statutDemande.id for statutDemande in vm.statutdemandes track by statutDemande.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="cebilletterieApp.demande.paiement" for="field_paiement">Paiement</label>
+            <select class="form-control" id="field_paiement" name="paiement" ng-model="vm.demande.paiement" ng-options="paiement as paiement.id for paiement in vm.paiements track by paiement.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="cebilletterieApp.demande.billet" for="field_billet">Billet</label>
+            <select class="form-control" id="field_billet" name="billet" ng-model="vm.demande.billet" ng-options="billet as billet.id for billet in vm.billets track by billet.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

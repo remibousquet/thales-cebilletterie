@@ -1,0 +1,24 @@
+{
+    "cebilletterieApp": {
+        "subvention" : {
+            "home": {
+                "title": "Subventions",
+                "createLabel": "Créer un nouveau Subvention",
+                "createOrEditLabel": "Créer ou éditer un Subvention",
+                "search": "Recherche pour Subvention"
+            },
+            "created": "Un nouveau Subvention a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Subvention avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Subvention avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Subvention {{ id }} ?"
+            },
+            "detail": {
+                "title": "Subvention"
+            },
+            "subventionAnnee": "Subvention Annee",
+            "subventionMontant": "Subvention Montant",
+            "salarie": "Salarie"
+        }
+    }
+}

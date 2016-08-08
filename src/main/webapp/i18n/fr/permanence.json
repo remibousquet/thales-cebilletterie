@@ -1,0 +1,25 @@
+{
+    "cebilletterieApp": {
+        "permanence" : {
+            "home": {
+                "title": "Permanences",
+                "createLabel": "Créer un nouveau Permanence",
+                "createOrEditLabel": "Créer ou éditer un Permanence",
+                "search": "Recherche pour Permanence"
+            },
+            "created": "Un nouveau Permanence a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Permanence avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Permanence avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Permanence {{ id }} ?"
+            },
+            "detail": {
+                "title": "Permanence"
+            },
+            "date": "Date",
+            "horaire": "Horaire",
+            "message": "Message",
+            "salarie": "Salarie"
+        }
+    }
+}

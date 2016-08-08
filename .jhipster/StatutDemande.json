@@ -1,0 +1,18 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "date",
+      "fieldType": "ZonedDateTime",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160808101105",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "statut_demande"
+}

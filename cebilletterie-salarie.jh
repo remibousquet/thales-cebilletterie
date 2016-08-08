@@ -1,0 +1,79 @@
+/**
+* L'entité Salarie n'est pas générée car est remplacée par l'entité native User qui a les mêmes champs
+* entity Salarie {
+* 	Nom String required maxlength(100),
+* 	Prenom String required maxlength(100),
+* 	Compte String maxlength(100),
+* 	MotDePasse String maxlength(100),
+* 	AdresseMail String maxlength(100),
+* 	Actif Boolean
+* }
+*/
+
+entity Subvention {
+	SubventionAnnee Integer required,
+	SubventionMontant BigDecimal required
+}
+
+entity Enfant {
+	Nom String required maxlength(100),
+	Prenom String required maxlength(100),
+	DateNaissance ZonedDateTime required
+}
+
+entity Permanence {
+	Date ZonedDateTime required
+	Horaire String required maxlength(20),
+	Message String maxlength(256)
+}
+
+entity Demande {
+	NumeroExterne String maxlength(100),
+	Quantite Integer required,
+	Commentaire String maxlength(256)
+}
+
+entity StatutDemande {
+	Date ZonedDateTime required
+}
+
+entity Paiement {
+	Date ZonedDateTime required,
+	Banque String required maxlength(100),
+	NumeroCheque String required maxlength(50),
+	Montant BigDecimal required,
+	Commentaire String maxlength(256)
+}
+
+entity Billet {
+	Titre String required maxlength(100),
+	TypeDate Boolean required,
+	DateDebut ZonedDateTime required,
+	DateFin ZonedDateTime,
+	Horaire String maxlength(20),
+	Lieu String maxlength(100),
+	ZoneSalle String maxlength(20),
+	TypePublic String maxlength(100),
+	PrixUnitaire BigDecimal required,
+	QuantiteStock Integer,
+	Commentaire String maxlength(256)
+}
+
+entity TypeBillet {
+	Libelle String required maxlength(100)
+}
+
+entity TitreTypeBillet {
+	Libelle String required maxlength(100)
+}
+
+relationship ManyToOne {
+	Subvention{salarie} to User,
+	Enfant{salarie} to User,
+	Permanence{salarie} to User,
+	Demande{statut} to StatutDemande,
+	Demande{paiement} to Paiement,
+	Demande{billet} to Billet,
+	Billet{type} to TypeBillet,
+	Billet{titreType} to TitreTypeBillet
+}

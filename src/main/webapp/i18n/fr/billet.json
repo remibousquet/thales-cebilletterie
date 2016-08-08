@@ -1,0 +1,34 @@
+{
+    "cebilletterieApp": {
+        "billet" : {
+            "home": {
+                "title": "Billets",
+                "createLabel": "Créer un nouveau Billet",
+                "createOrEditLabel": "Créer ou éditer un Billet",
+                "search": "Recherche pour Billet"
+            },
+            "created": "Un nouveau Billet a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Billet avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Billet avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Billet {{ id }} ?"
+            },
+            "detail": {
+                "title": "Billet"
+            },
+            "titre": "Titre",
+            "typeDate": "Type Date",
+            "dateDebut": "Date Debut",
+            "dateFin": "Date Fin",
+            "horaire": "Horaire",
+            "lieu": "Lieu",
+            "zoneSalle": "Zone Salle",
+            "typePublic": "Type Public",
+            "prixUnitaire": "Prix Unitaire",
+            "quantiteStock": "Quantite Stock",
+            "commentaire": "Commentaire",
+            "type": "Type",
+            "titreType": "Titre Type"
+        }
+    }
+}

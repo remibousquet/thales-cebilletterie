@@ -1,0 +1,178 @@
+
+<form name="editForm" role="form" novalidate ng-submit="vm.save()" show-validation>
+
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                ng-click="vm.clear()">&times;</button>
+        <h4 class="modal-title" id="myBilletLabel" translate="cebilletterieApp.billet.home.createOrEditLabel">Create or edit a Billet</h4>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" ng-show="vm.billet.id">
+            <label for="id" translate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                    ng-model="vm.billet.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.titre" for="field_titre">Titre</label>
+            <input type="text" class="form-control" name="titre" id="field_titre"
+                    ng-model="vm.billet.titre"
+                    required ng-maxlength="100" />
+            <div ng-show="editForm.titre.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.titre.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.titre.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.typeDate" for="field_typeDate">Type Date</label>
+            <input type="checkbox" class="form-control" name="typeDate" id="field_typeDate"
+                    ng-model="vm.billet.typeDate"
+                     />
+            <div ng-show="editForm.typeDate.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.typeDate.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.dateDebut" for="field_dateDebut">Date Debut</label>
+                <div class="input-group">
+                    <input id="field_dateDebut" type="text" class="form-control" name="dateDebut" datetime-picker="{{dateformat}}" ng-model="vm.billet.dateDebut" is-open="vm.datePickerOpenStatus.dateDebut"
+                    required  />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateDebut')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+            <div ng-show="editForm.dateDebut.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.dateDebut.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.dateDebut.$error.ZonedDateTimelocal" translate="entity.validation.ZonedDateTimelocal">
+                    This field should be a date and time.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.dateFin" for="field_dateFin">Date Fin</label>
+                <div class="input-group">
+                    <input id="field_dateFin" type="text" class="form-control" name="dateFin" datetime-picker="{{dateformat}}" ng-model="vm.billet.dateFin" is-open="vm.datePickerOpenStatus.dateFin"
+                      />
+                    <span class="input-group-btn">
+                        <button type="button" class="btn btn-default" ng-click="vm.openCalendar('dateFin')"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.horaire" for="field_horaire">Horaire</label>
+            <input type="text" class="form-control" name="horaire" id="field_horaire"
+                    ng-model="vm.billet.horaire"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.horaire.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.horaire.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.lieu" for="field_lieu">Lieu</label>
+            <input type="text" class="form-control" name="lieu" id="field_lieu"
+                    ng-model="vm.billet.lieu"
+                    ng-maxlength="100" />
+            <div ng-show="editForm.lieu.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.lieu.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.zoneSalle" for="field_zoneSalle">Zone Salle</label>
+            <input type="text" class="form-control" name="zoneSalle" id="field_zoneSalle"
+                    ng-model="vm.billet.zoneSalle"
+                    ng-maxlength="20" />
+            <div ng-show="editForm.zoneSalle.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.zoneSalle.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="20">
+                    This field cannot be longer than 20 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.typePublic" for="field_typePublic">Type Public</label>
+            <input type="text" class="form-control" name="typePublic" id="field_typePublic"
+                    ng-model="vm.billet.typePublic"
+                    ng-maxlength="100" />
+            <div ng-show="editForm.typePublic.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.typePublic.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="100">
+                    This field cannot be longer than 100 characters.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.prixUnitaire" for="field_prixUnitaire">Prix Unitaire</label>
+            <input type="number" class="form-control" name="prixUnitaire" id="field_prixUnitaire"
+                    ng-model="vm.billet.prixUnitaire"
+                    required />
+            <div ng-show="editForm.prixUnitaire.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.prixUnitaire.$error.required" translate="entity.validation.required">
+                    This field is required.
+                </p>
+                <p class="help-block"
+                    ng-show="editForm.prixUnitaire.$error.number" translate="entity.validation.number">
+                    This field should be a number.
+                </p>
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.quantiteStock" for="field_quantiteStock">Quantite Stock</label>
+            <input type="number" class="form-control" name="quantiteStock" id="field_quantiteStock"
+                    ng-model="vm.billet.quantiteStock"
+                     />
+        </div>
+        <div class="form-group">
+            <label class="control-label" translate="cebilletterieApp.billet.commentaire" for="field_commentaire">Commentaire</label>
+            <input type="text" class="form-control" name="commentaire" id="field_commentaire"
+                    ng-model="vm.billet.commentaire"
+                    ng-maxlength="256" />
+            <div ng-show="editForm.commentaire.$invalid">
+                <p class="help-block"
+                    ng-show="editForm.commentaire.$error.maxlength" translate="entity.validation.maxlength" translate-value-max="256">
+                    This field cannot be longer than 256 characters.
+                </p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label translate="cebilletterieApp.billet.type" for="field_type">Type</label>
+            <select class="form-control" id="field_type" name="type" ng-model="vm.billet.type" ng-options="typeBillet as typeBillet.id for typeBillet in vm.typebillets track by typeBillet.id">
+                <option value=""></option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label translate="cebilletterieApp.billet.titreType" for="field_titreType">Titre Type</label>
+            <select class="form-control" id="field_titreType" name="titreType" ng-model="vm.billet.titreType" ng-options="titreTypeBillet as titreTypeBillet.id for titreTypeBillet in vm.titretypebillets track by titreTypeBillet.id">
+                <option value=""></option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal" ng-click="vm.clear()">
+            <span class="glyphicon glyphicon-ban-circle"></span>&nbsp;<span translate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" ng-disabled="editForm.$invalid || vm.isSaving" class="btn btn-primary">
+            <span class="glyphicon glyphicon-save"></span>&nbsp;<span translate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

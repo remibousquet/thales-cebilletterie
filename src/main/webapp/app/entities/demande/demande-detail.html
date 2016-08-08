@@ -1,0 +1,43 @@
+
+<div>
+    <h2><span translate="cebilletterieApp.demande.detail.title">Demande</span> {{vm.demande.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="dl-horizontal jh-entity-details">
+        <dt><span translate="cebilletterieApp.demande.numeroExterne">Numero Externe</span></dt>
+        <dd>
+            <span>{{vm.demande.numeroExterne}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.demande.quantite">Quantite</span></dt>
+        <dd>
+            <span>{{vm.demande.quantite}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.demande.commentaire">Commentaire</span></dt>
+        <dd>
+            <span>{{vm.demande.commentaire}}</span>
+        </dd>
+        <dt><span translate="cebilletterieApp.demande.statut">Statut</span></dt>
+        <dd>
+            <a ui-sref="statut-demande-detail({id:vm.demande.statut.id})">{{vm.demande.statut.id}}</a>
+        </dd>
+        <dt><span translate="cebilletterieApp.demande.paiement">Paiement</span></dt>
+        <dd>
+            <a ui-sref="paiement-detail({id:vm.demande.paiement.id})">{{vm.demande.paiement.id}}</a>
+        </dd>
+        <dt><span translate="cebilletterieApp.demande.billet">Billet</span></dt>
+        <dd>
+            <a ui-sref="billet-detail({id:vm.demande.billet.id})">{{vm.demande.billet.id}}</a>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            ui-sref="{{ vm.previousState }}"
+            class="btn btn-info">
+        <span class="glyphicon glyphicon-arrow-left"></span>&nbsp;<span translate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button" ui-sref="demande-detail.edit({id:vm.demande.id})" class="btn btn-primary">
+        <span class="glyphicon glyphicon-pencil"></span>
+        <span class="hidden-xs hidden-sm" translate="entity.action.edit"> Edit</span>
+    </button>
+</div>

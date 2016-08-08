@@ -1,0 +1,35 @@
+{
+  "relationships": [
+    {
+      "relationshipId": 1,
+      "relationshipType": "many-to-one",
+      "relationshipName": "salarie",
+      "otherEntityName": "user",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "subventionAnnee",
+      "fieldType": "Integer",
+      "fieldValidateRules": [
+        "required"
+      ]
+    },
+    {
+      "fieldId": 2,
+      "fieldName": "subventionMontant",
+      "fieldType": "BigDecimal",
+      "fieldValidateRules": [
+        "required"
+      ]
+    }
+  ],
+  "changelogDate": "20160808101101",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "javadoc": "L'entité Salarie n'est pas générée car est remplacée par l'entité native User qui a les mêmes champsentity Salarie {Nom String required maxlength(100),Prenom String required maxlength(100),Compte String maxlength(100),MotDePasse String maxlength(100),AdresseMail String maxlength(100),Actif Boolean}",
+  "entityTableName": "subvention"
+}

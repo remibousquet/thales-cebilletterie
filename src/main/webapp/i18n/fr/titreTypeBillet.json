@@ -1,0 +1,22 @@
+{
+    "cebilletterieApp": {
+        "titreTypeBillet" : {
+            "home": {
+                "title": "TitreTypeBillets",
+                "createLabel": "Créer un nouveau Titre Type Billet",
+                "createOrEditLabel": "Créer ou éditer un Titre Type Billet",
+                "search": "Recherche pour Titre Type Billet"
+            },
+            "created": "Un nouveau Titre Type Billet a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Titre Type Billet avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Titre Type Billet avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Titre Type Billet {{ id }} ?"
+            },
+            "detail": {
+                "title": "Titre Type Billet"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}

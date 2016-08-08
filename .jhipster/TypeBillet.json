@@ -1,0 +1,20 @@
+{
+  "relationships": [],
+  "fields": [
+    {
+      "fieldId": 1,
+      "fieldName": "libelle",
+      "fieldType": "String",
+      "fieldValidateRules": [
+        "required",
+        "maxlength"
+      ],
+      "fieldValidateRulesMaxlength": 100
+    }
+  ],
+  "changelogDate": "20160808101108",
+  "dto": "no",
+  "pagination": "no",
+  "service": "no",
+  "entityTableName": "type_billet"
+}
