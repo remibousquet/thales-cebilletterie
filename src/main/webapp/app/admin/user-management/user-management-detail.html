@@ -28,6 +28,47 @@
             </ul>
         </dd>
     </dl>
+    
+    <br/>
+    <h3 translate="userManagement.enfant.title">Subventions</h3>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="userManagement.enfant.enfantNom">Nom</span></th>
+                    <th><span translate="userManagement.enfant.enfantPrenom">Prénom</span></th>
+                    <th><span translate="userManagement.enfant.enfantDateNaissance">Date Naissance</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="enfant in vm.user.enfants track by enfant.id">
+                    <td>{{enfant.nom}}</td>
+                    <td>{{enfant.prenom}}</td>
+                    <td>{{enfant.dateNaissance | date:'shortDate'}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <br/>
+    <h3 translate="userManagement.subvention.title">Subventions</h3>
+    <div class="table-responsive">
+        <table class="jh-table table table-striped">
+            <thead>
+                <tr>
+                    <th><span translate="userManagement.subvention.subventionAnnee">Année</span></th>
+                    <th><span translate="userManagement.subvention.subventionMontant">Montant</span></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="subvention in vm.user.subventions track by subvention.id">
+                    <td>{{subvention.subventionAnnee}}</td>
+                    <td>{{subvention.subventionMontant}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
     <button type="submit"
             ui-sref="user-management"
             class="btn btn-info">

@@ -25,6 +25,17 @@
         "createdBy": "Créé par",
         "createdDate": "Créé le",
         "lastModifiedBy": "Modifié par",
-        "lastModifiedDate": "Modifié le"
+        "lastModifiedDate": "Modifié le",
+        "enfant" : {
+            "title": "Enfants",
+            "enfantNom": "Nom",
+            "enfantPrenom": "Prénom",
+            "enfantDateNaissance": "Date de naissance"
+        },
+        "subvention" : {
+            "title": "Subventions",
+            "subventionAnnee": "Année",
+            "subventionMontant": "Montant"
+        }
     }
 }

@@ -177,6 +177,8 @@ public class UserService {
     public Optional<User> getUserWithAuthoritiesByLogin(String login) {
         return userRepository.findOneByLogin(login).map(u -> {
             u.getAuthorities().size();
+            u.getEnfants().size(); // eagerly load the association
+            u.getSubventions().size(); // eagerly load the association
             return u;
         });
     }
@@ -185,6 +187,8 @@ public class UserService {
     public User getUserWithAuthorities(Long id) {
         User user = userRepository.findOne(id);
         user.getAuthorities().size(); // eagerly load the association
+        user.getEnfants().size(); // eagerly load the association
+        user.getSubventions().size(); // eagerly load the association
         return user;
     }
 
@@ -192,6 +196,8 @@ public class UserService {
     public User getUserWithAuthorities() {
         User user = userRepository.findOneByLogin(SecurityUtils.getCurrentUserLogin()).get();
         user.getAuthorities().size(); // eagerly load the association
+        user.getEnfants().size(); // eagerly load the association
+        user.getSubventions().size(); // eagerly load the association
         return user;
     }
 
