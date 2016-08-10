@@ -33,6 +33,13 @@ entity Demande {
 	Commentaire String maxlength(256)
 }
 
+/**
+* Type demande (SALARIE ou STOCK)
+*/
+entity TypeDemande {
+	Libelle String required maxlength(100)
+}
+
 entity StatutDemande {
 	Date ZonedDateTime required
 }
@@ -71,6 +78,7 @@ relationship ManyToOne {
 	Subvention{salarie} to User,
 	Enfant{salarie} to User,
 	Permanence{salarie} to User,
+	Demande{type} to TypeDemande,
 	Demande{statut} to StatutDemande,
 	Demande{paiement} to Paiement,
 	Demande{billet} to Billet,

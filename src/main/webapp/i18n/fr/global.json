@@ -16,6 +16,7 @@
                 "permanence": "Permanence",
                 "billet": "Billet",
                 "demande": "Demande",
+                "typeDemande": "Type Demande",
                 "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
             },
             "account": {

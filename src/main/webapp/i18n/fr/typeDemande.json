@@ -1,0 +1,22 @@
+{
+    "cebilletterieApp": {
+        "typeDemande" : {
+            "home": {
+                "title": "TypeDemandes",
+                "createLabel": "Créer un nouveau Type Demande",
+                "createOrEditLabel": "Créer ou éditer un Type Demande",
+                "search": "Recherche pour Type Demande"
+            },
+            "created": "Un nouveau Type Demande a été créé avec l'identifiant {{ param }}",
+            "updated": "Le Type Demande avec l'identifiant {{ param }} a été mis à jour",
+            "deleted": "Le Type Demande avec l'identifiant {{ param }} a été supprimé",
+            "delete": {
+                "question": "Etes-vous certain de vouloir supprimer le Type Demande {{ id }} ?"
+            },
+            "detail": {
+                "title": "Type Demande"
+            },
+            "libelle": "Libelle"
+        }
+    }
+}
