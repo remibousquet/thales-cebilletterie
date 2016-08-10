@@ -5,9 +5,9 @@
         .module('cebilletterieApp')
         .controller('DemandeDetailController', DemandeDetailController);
 
-    DemandeDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Demande', 'StatutDemande', 'Paiement', 'Billet'];
+    DemandeDetailController.$inject = ['$scope', '$rootScope', '$stateParams', 'previousState', 'entity', 'Demande', 'StatutDemande', 'Paiement', 'Billet', 'TypeDemande'];
 
-    function DemandeDetailController($scope, $rootScope, $stateParams, previousState, entity, Demande, StatutDemande, Paiement, Billet) {
+    function DemandeDetailController($scope, $rootScope, $stateParams, previousState, entity, Demande, StatutDemande, Paiement, Billet, TypeDemande) {
         var vm = this;
 
         vm.demande = entity;

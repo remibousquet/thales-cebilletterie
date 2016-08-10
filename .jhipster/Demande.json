@@ -1,58 +1,64 @@
 {
-  "relationships": [
-    {
-      "relationshipId": 1,
-      "relationshipType": "many-to-one",
-      "relationshipName": "statut",
-      "otherEntityName": "statutDemande",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipId": 2,
-      "relationshipType": "many-to-one",
-      "relationshipName": "paiement",
-      "otherEntityName": "paiement",
-      "otherEntityField": "id"
-    },
-    {
-      "relationshipId": 3,
-      "relationshipType": "many-to-one",
-      "relationshipName": "billet",
-      "otherEntityName": "billet",
-      "otherEntityField": "id"
-    }
-  ],
-  "fields": [
-    {
-      "fieldId": 1,
-      "fieldName": "numeroExterne",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "maxlength"
-      ],
-      "fieldValidateRulesMaxlength": 100
-    },
-    {
-      "fieldId": 2,
-      "fieldName": "quantite",
-      "fieldType": "Integer",
-      "fieldValidateRules": [
-        "required"
-      ]
-    },
-    {
-      "fieldId": 3,
-      "fieldName": "commentaire",
-      "fieldType": "String",
-      "fieldValidateRules": [
-        "maxlength"
-      ],
-      "fieldValidateRulesMaxlength": 256
-    }
-  ],
-  "changelogDate": "20160808101104",
-  "dto": "no",
-  "pagination": "no",
-  "service": "no",
-  "entityTableName": "demande"
+    "relationships": [
+        {
+            "relationshipId": 1,
+            "relationshipType": "many-to-one",
+            "relationshipName": "statut",
+            "otherEntityName": "statutDemande",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 2,
+            "relationshipType": "many-to-one",
+            "relationshipName": "paiement",
+            "otherEntityName": "paiement",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipId": 3,
+            "relationshipType": "many-to-one",
+            "relationshipName": "billet",
+            "otherEntityName": "billet",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "type",
+            "otherEntityName": "typeDemande",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "libelle"
+        }
+    ],
+    "fields": [
+        {
+            "fieldId": 1,
+            "fieldName": "numeroExterne",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldId": 2,
+            "fieldName": "quantite",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldId": 3,
+            "fieldName": "commentaire",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 256
+        }
+    ],
+    "changelogDate": "20160808101104",
+    "dto": "no",
+    "service": "no",
+    "entityTableName": "demande",
+    "pagination": "no"
 }

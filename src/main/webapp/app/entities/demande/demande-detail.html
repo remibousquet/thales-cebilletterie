@@ -28,6 +28,10 @@
         <dd>
             <a ui-sref="billet-detail({id:vm.demande.billet.id})">{{vm.demande.billet.id}}</a>
         </dd>
+        <dt><span translate="cebilletterieApp.demande.type">Type</span></dt>
+        <dd>
+            <a ui-sref="type-demande-detail({id:vm.demande.type.id})">{{vm.demande.type.libelle}}</a>
+        </dd>
     </dl>
 
     <button type="submit"

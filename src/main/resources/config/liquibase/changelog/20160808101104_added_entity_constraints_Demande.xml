@@ -26,5 +26,11 @@
                                  referencedColumnNames="id"
                                  referencedTableName="billet"/>
 
+        <addForeignKeyConstraint baseColumnNames="type_id"
+                                 baseTableName="demande"
+                                 constraintName="fk_demande_type_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="type_demande"/>
+
     </changeSet>
 </databaseChangeLog>

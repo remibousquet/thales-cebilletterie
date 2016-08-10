@@ -21,7 +21,8 @@
             "commentaire": "Commentaire",
             "statut": "Statut",
             "paiement": "Paiement",
-            "billet": "Billet"
+            "billet": "Billet",
+            "type": "Type"
         }
     }
 }

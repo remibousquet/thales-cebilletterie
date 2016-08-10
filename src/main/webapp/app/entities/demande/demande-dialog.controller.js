@@ -5,9 +5,9 @@
         .module('cebilletterieApp')
         .controller('DemandeDialogController', DemandeDialogController);
 
-    DemandeDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Demande', 'StatutDemande', 'Paiement', 'Billet'];
+    DemandeDialogController.$inject = ['$timeout', '$scope', '$stateParams', '$uibModalInstance', 'entity', 'Demande', 'StatutDemande', 'Paiement', 'Billet', 'TypeDemande'];
 
-    function DemandeDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Demande, StatutDemande, Paiement, Billet) {
+    function DemandeDialogController ($timeout, $scope, $stateParams, $uibModalInstance, entity, Demande, StatutDemande, Paiement, Billet, TypeDemande) {
         var vm = this;
 
         vm.demande = entity;
@@ -16,6 +16,7 @@
         vm.statutdemandes = StatutDemande.query();
         vm.paiements = Paiement.query();
         vm.billets = Billet.query();
+        vm.typedemandes = TypeDemande.query();
 
         $timeout(function (){
             angular.element('.form-group:eq(1)>input').focus();

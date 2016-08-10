@@ -45,6 +45,9 @@ public class Demande implements Serializable {
     @ManyToOne
     private Billet billet;
 
+    @ManyToOne
+    private TypeDemande type;
+
     public Long getId() {
         return id;
     }
@@ -99,6 +102,14 @@ public class Demande implements Serializable {
 
     public void setBillet(Billet billet) {
         this.billet = billet;
+    }
+
+    public TypeDemande getType() {
+        return type;
+    }
+
+    public void setType(TypeDemande typeDemande) {
+        this.type = typeDemande;
     }
 
     @Override
