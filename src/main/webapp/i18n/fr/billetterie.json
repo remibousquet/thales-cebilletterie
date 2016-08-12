@@ -1,0 +1,14 @@
+{
+    "cebilletterieApp": {
+        "billetterie" : {
+	        "demandes" : {
+	            "home": {
+	                "title": "Demandes"
+	           	},
+	           	"creation": {
+	                "title": "Création d'une demande"
+	           	}
+	        }
+     	}   
+    }
+}

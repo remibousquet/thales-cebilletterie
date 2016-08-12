@@ -5,6 +5,10 @@
         "menu": {
             "home": "Accueil",
             "jhipster-needle-menu-add-element": "JHipster will add additional menu entries here (do not translate!)",
+            "demandes":{
+            	"main": "Demandes",
+            	"creation": "Création d'une demande"
+            },
             "entities": {
                 "main": "Entités",
                 "statutDemande": "Statut Demande",
