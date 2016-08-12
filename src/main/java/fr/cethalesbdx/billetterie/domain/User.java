@@ -1,22 +1,35 @@
 package fr.cethalesbdx.billetterie.domain;
 
-import fr.cethalesbdx.billetterie.config.Constants;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-import org.hibernate.validator.constraints.Email;
-
-import org.springframework.data.elasticsearch.annotations.Document;
-import javax.persistence.*;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
 import java.io.Serializable;
+import java.time.ZonedDateTime;
 import java.util.HashSet;
 import java.util.Locale;
 import java.util.Set;
-import java.time.ZonedDateTime;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.Cache;
+import org.hibernate.annotations.CacheConcurrencyStrategy;
+import org.hibernate.validator.constraints.Email;
+import org.springframework.data.elasticsearch.annotations.Document;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import fr.cethalesbdx.billetterie.config.Constants;
 
 /**
  * A user.
@@ -91,6 +104,16 @@ public class User extends AbstractAuditingEntity implements Serializable {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, mappedBy = "user")
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<PersistentToken> persistentTokens = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "salarie", fetch=FetchType.LAZY)
+    @JsonIgnore
+    //@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Enfant> enfants = new HashSet<>();
+
+    @OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true, mappedBy = "salarie", fetch=FetchType.LAZY)
+    @JsonIgnore
+    //@Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
+    private Set<Subvention> subventions = new HashSet<>();
 
     public Long getId() {
         return id;
@@ -196,8 +219,24 @@ public class User extends AbstractAuditingEntity implements Serializable {
     public void setPersistentTokens(Set<PersistentToken> persistentTokens) {
         this.persistentTokens = persistentTokens;
     }
+    
+    public Set<Enfant> getEnfants() {
+		return enfants;
+	}
 
-    @Override
+	public void setEnfants(Set<Enfant> enfants) {
+		this.enfants = enfants;
+	}
+	
+	public Set<Subvention> getSubventions() {
+		return subventions;
+	}
+
+	public void setSubventions(Set<Subvention> subventions) {
+		this.subventions = subventions;
+	}
+
+	@Override
     public boolean equals(Object o) {
         if (this == o) {
             return true;

@@ -1,15 +1,19 @@
 package fr.cethalesbdx.billetterie.web.rest.dto;
 
-import fr.cethalesbdx.billetterie.config.Constants;
+import java.util.Set;
+import java.util.stream.Collectors;
 
-import fr.cethalesbdx.billetterie.domain.Authority;
-import fr.cethalesbdx.billetterie.domain.User;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Email;
 
-import javax.validation.constraints.*;
-import java.util.Set;
-import java.util.stream.Collectors;
+import fr.cethalesbdx.billetterie.config.Constants;
+import fr.cethalesbdx.billetterie.domain.Authority;
+import fr.cethalesbdx.billetterie.domain.Enfant;
+import fr.cethalesbdx.billetterie.domain.Subvention;
+import fr.cethalesbdx.billetterie.domain.User;
 /**
  * A DTO representing a user, with his authorities.
  */
@@ -36,6 +40,10 @@ public class UserDTO {
     private String langKey;
 
     private Set<String> authorities;
+    
+    private Set<Enfant> enfants;
+    
+    private Set<Subvention> subventions;
 
     public UserDTO() {
     }
@@ -44,11 +52,12 @@ public class UserDTO {
         this(user.getLogin(), user.getFirstName(), user.getLastName(),
             user.getEmail(), user.getActivated(), user.getLangKey(),
             user.getAuthorities().stream().map(Authority::getName)
-                .collect(Collectors.toSet()));
+                .collect(Collectors.toSet()), user.getEnfants(), user.getSubventions());
     }
 
     public UserDTO(String login, String firstName, String lastName,
-        String email, boolean activated, String langKey, Set<String> authorities) {
+        String email, boolean activated, String langKey, Set<String> authorities,
+        Set<Enfant> enfants, Set<Subvention> subventions) {
 
         this.login = login;
         this.firstName = firstName;
@@ -57,6 +66,8 @@ public class UserDTO {
         this.activated = activated;
         this.langKey = langKey;
         this.authorities = authorities;
+        this.enfants = enfants;
+        this.subventions = subventions;
     }
 
     public String getLogin() {
@@ -86,8 +97,16 @@ public class UserDTO {
     public Set<String> getAuthorities() {
         return authorities;
     }
+    
+    public Set<Enfant> getEnfants() {
+		return enfants;
+	}
 
-    @Override
+	public Set<Subvention> getSubventions() {
+		return subventions;
+	}
+
+	@Override
     public String toString() {
         return "UserDTO{" +
             "login='" + login + '\'' +
@@ -97,6 +116,8 @@ public class UserDTO {
             ", activated=" + activated +
             ", langKey='" + langKey + '\'' +
             ", authorities=" + authorities +
+            ", enfants=" + enfants +
+            ", subventions=" + subventions +
             "}";
     }
 }

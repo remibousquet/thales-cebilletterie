@@ -4,6 +4,8 @@ import java.time.ZonedDateTime;
 
 import java.util.Set;
 
+import fr.cethalesbdx.billetterie.domain.Enfant;
+import fr.cethalesbdx.billetterie.domain.Subvention;
 import fr.cethalesbdx.billetterie.domain.User;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -40,9 +42,11 @@ public class ManagedUserDTO extends UserDTO {
         this.password = null;
     }
 
-    public ManagedUserDTO(Long id, String login, String password, String firstName, String lastName,
-                          String email, boolean activated, String langKey, Set<String> authorities , ZonedDateTime createdDate, String lastModifiedBy, ZonedDateTime lastModifiedDate ) {
-        super(login, firstName, lastName, email, activated, langKey, authorities);
+	public ManagedUserDTO(Long id, String login, String password, String firstName, String lastName, String email,
+			boolean activated, String langKey, Set<String> authorities, Set<Enfant> enfants,
+			Set<Subvention> subventions, ZonedDateTime createdDate, String lastModifiedBy,
+			ZonedDateTime lastModifiedDate) {
+        super(login, firstName, lastName, email, activated, langKey, authorities, enfants, subventions);
         this.id = id;
         this.createdDate = createdDate;
         this.lastModifiedBy = lastModifiedBy;
